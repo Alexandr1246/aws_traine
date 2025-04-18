@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDevOpsFullAccess1",
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "DockerECR1",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:*",
+        "ecs:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SecretsManagerAccess1",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CICDAccess1",
+      "Effect": "Allow",
+      "Action": [
+        "codepipeline:*",
+        "codebuild:*",
+        "codedeploy:*",
+        "codestar:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ParameterStore1",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameters",
+        "ssm:GetParameter",
+        "ssm:PutParameter",
+        "ssm:DeleteParameter"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MiscAccess1",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:*",
+        "tag:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
