@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ec2_role" {
-  name = "ec2-role-for-access"
+  name = "test-terraform-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -22,6 +22,7 @@ resource "aws_iam_role_policy_attachment" "s3_readonly" {
 }
 
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
-  name = "ec2-instance-profile"
+  name = "test-terraform-instance-profile"
   role = aws_iam_role.ec2_role.name
 }
+    
